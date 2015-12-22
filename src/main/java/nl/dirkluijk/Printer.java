@@ -21,7 +21,7 @@ public class Printer {
     /**
      * Prints all persons that match a given condition
      */
-    public void printPersons(List<Person> persons, Condition condition) {
+    public void printPersons(List<Person> persons, Condition<Person> condition) {
         for (Person person : persons) {
             if (condition.matches(person)) {
                 System.out.println(person);
