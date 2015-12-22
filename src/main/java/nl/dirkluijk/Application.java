@@ -24,8 +24,18 @@ public class Application {
 
         Printer p = new Printer();
 
-        p.printFemales(persons);
+        p.printPersons(persons, new Condition() {
+            public boolean matches(Person person) {
+                return person.getGender() == Gender.FEMALE;
+            }
+        });
+
         System.out.println("====");
-        p.printBelowAge(persons, 20);
+
+        p.printPersons(persons, new Condition() {
+            public boolean matches(Person person) {
+                return person.getAge() < 20;
+            }
+        });
     }
 }

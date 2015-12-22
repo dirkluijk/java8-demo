@@ -19,22 +19,11 @@ public class Printer {
     }
 
     /**
-     * Prints only females
+     * Prints all persons that match a given condition
      */
-    public void printFemales(List<Person> persons) {
+    public void printPersons(List<Person> persons, Condition condition) {
         for (Person person : persons) {
-            if (person.getGender() == Gender.FEMALE) {
-                System.out.println(person);
-            }
-        }
-    }
-
-    /**
-     * Prints all persons below a given age
-     */
-    public void printBelowAge(List<Person> persons, int maxAge) {
-        for (Person person : persons) {
-            if (person.getAge() < maxAge) {
+            if (condition.matches(person)) {
                 System.out.println(person);
             }
         }
