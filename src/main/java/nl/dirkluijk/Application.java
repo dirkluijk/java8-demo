@@ -23,6 +23,9 @@ public class Application {
         );
 
         Printer p = new Printer();
-        p.printPersons(persons);
+
+        p.printFemales(persons);
+        System.out.println("====");
+        p.printBelowAge(persons, 20);
     }
 }
